@@ -12,7 +12,7 @@
         <!--Calculator Result View Controller-->
         <scene sceneID="few-kM-Q4U">
             <objects>
-                <viewController storyboardIdentifier="CalculatorResult" id="dlm-mg-Ujf" customClass="CalculatorResultViewController" customModule="Sprint3r_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CalculatorResultViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dlm-mg-Ujf" customClass="CalculatorResultViewController" customModule="Sprint3r_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eLA-vj-2KZ"/>
                         <viewControllerLayoutGuide type="bottom" id="2XD-mN-976"/>
@@ -32,7 +32,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="Result" destination="O31-4m-kYG" id="LaY-gC-fA1"/>
+                        <outlet property="resultLabel" destination="O31-4m-kYG" id="1gk-pe-9nI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VSe-gv-EgE" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         
     }
 
@@ -50,12 +50,23 @@ class ViewController: UIViewController {
         let storyboard = UIStoryboard(name:"CalculatorResult",bundle:nil)
         
         //Get ViewController from storyboard by identity name
-//        let vc = storyBoard.instantiateViewController(withIdentifier: "CalculatorResultViewController")
+        //let vc = storyBoard.instantiateViewController(withIdentifier: "CalculatorResultViewController")
         
         //Get ViewController from storyboard by intialViewController
-        let vc = storyboard.instantiateInitialViewController()!
+        let vc = storyboard.instantiateViewController(withIdentifier: "CalculatorResultViewController") as! CalculatorResultViewController
+        vc.result = self.getResult()
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    private func getResult() -> String {
+        let leftOperand = self.leftOperandTextField.text ?? "0"
+        let rightOperand = self.rightOperandTextField.text ?? "0"
+        let left = Int(leftOperand) ?? 0
+        let right = Int(rightOperand) ?? 0
+        
+        return String(left + right)
+    }
+    
 
 }
 
